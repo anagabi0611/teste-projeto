@@ -1,0 +1,14 @@
+service:
+  app:
+    image: python:3.14
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: bash -c "pip install -r requirements.txt && python3 app.py"
+  db:
+    image: postgres:15
+    enviroment:
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: appdb
+
