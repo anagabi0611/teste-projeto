@@ -1,4 +1,4 @@
-service:
+services:
   app:
     image: python:3.14
     working_dir: /app
@@ -7,7 +7,7 @@ service:
     command: bash -c "pip install -r requirements.txt && python3 app.py"
   db:
     image: postgres:15
-    enviroment:
+    environment:
       POSTGRES_USER: usuario
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: appdb
